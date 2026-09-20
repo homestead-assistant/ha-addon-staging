@@ -1,5 +1,24 @@
 # Changelog
 
+## 0.3.0
+
+**Breaking — this is a reinstall, not an upgrade.** The add-on slug changed from
+`homestead_hub` to `homestead-hub`. Home Assistant identifies an add-on by its
+slug, so the old add-on will show as unavailable and this one appears as a
+separate, uninstalled add-on. Add-on configuration and data live under the slug
+and do **not** carry over: note your options, uninstall the old add-on, install
+this one, and re-enter them. Back up `/addon_configs` first if you want a copy
+of the old data.
+
+- Adds the **storefront API**: external shops pull plant availability from the
+  Hub and claim the stock they intend to sell. Claimed plants stay in the Hub
+  and keep being cared for, but stop counting as available to other storefronts.
+  Keys are issued on the host with `storefront-key`; see `docs/STOREFRONT_API.md`.
+- Removes the previous single-storefront inventory push and its Inventory page.
+  The Hub no longer calls out to any storefront and holds no storefront
+  credentials. This changes no add-on option — the retired settings were
+  environment variables on the standalone Docker lane, never exposed here.
+
 ## 0.1.2
 
 - Detects Home Assistant add-on mode so onboarding, integrations, remote

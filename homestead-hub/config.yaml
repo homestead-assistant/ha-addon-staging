@@ -1,5 +1,5 @@
 name: Homestead Hub (Staging)
-version: "0.2.0"
+version: "0.3.0"
 slug: homestead-hub_staging
 description: Local-first home automation hub for chicken keeping and garden management
 url: https://github.com/homestead-assistant/hub
